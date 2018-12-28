@@ -4,28 +4,17 @@ import 'dart:io';
 class FlutterImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
     var img = Image.network(
-      "https://upload-images.jianshu.io/upload_images/3884536-0a4766ccd55f287a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
-      matchTextDirection: true,
+      "https://upload.jianshu.io/users/upload_avatars/3884536/d847a50f1da0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240",
+      repeat: ImageRepeat.repeatY,
     );
-
-    var center = Center(
-        child: ListView(
-      children: <Widget>[
-        Directionality(
-          textDirection: TextDirection.ltr,//left to right
-          child: img,
-        ),
-        Directionality(
-          textDirection: TextDirection.rtl,//right to left
-          child: img,
-        )
-      ],
-    ));
-
     return Scaffold(
-      body: center,
+      body: Container(
+        child: img,
+        constraints: BoxConstraints.expand(//对Image的约束
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height),
+      ),
     );
   }
 }
@@ -34,14 +23,16 @@ class FlutterImage extends StatelessWidget {
 //加载File图片： Image.file(File("/sdcard/flutter.jpeg")), 注意在AndroidManifest.xml中配置读写文件权限。
 
 //centerSlice//////////////
-//Image.network(
-//      "https://upload.jianshu.io/users/upload_avatars/3884536/d847a50f1da0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240",
-//          width: 400,
-//          height: 400,
-//          fit: BoxFit.contain,
-//          centerSlice: Rect.fromLTWH(10, 10, 10, 10),
-//    )
-
+//Image.network("
+//https://upload.jianshu.io/users/upload_avatars/3884536/d847a50f1da0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240
+//"
+//,
+//width: 400
+//,
+//height: 400
+//,
+//fit: BoxFit.contain,centerSlice: Rect.fromLTWH(10, 10, 10, 10),
+//)
 
 //matchTextDirection/////////////
 
@@ -66,4 +57,22 @@ class FlutterImage extends StatelessWidget {
 //
 //return Scaffold(
 //body: center,
+//);
+
+
+//repeat
+//var img = Image.network(
+//  "https://upload.jianshu.io/users/upload_avatars/3884536/d847a50f1da0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240",
+//  width: 50,
+//  height: 50,
+//  fit: BoxFit.scaleDown,
+//  repeat: ImageRepeat.repeat,
+//);
+//return Scaffold(
+//body: Container(
+//child: img,
+//constraints: BoxConstraints.expand(//对Image的约束
+//width: MediaQuery.of(context).size.width,
+//height: MediaQuery.of(context).size.height),
+//),
 //);
