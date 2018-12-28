@@ -14,11 +14,11 @@ class FlutterImage extends StatelessWidget {
         child: ListView(
       children: <Widget>[
         Directionality(
-          textDirection: TextDirection.ltr,
+          textDirection: TextDirection.ltr,//left to right
           child: img,
         ),
         Directionality(
-          textDirection: TextDirection.rtl,
+          textDirection: TextDirection.rtl,//right to left
           child: img,
         )
       ],
