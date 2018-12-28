@@ -4,14 +4,29 @@ import 'dart:io';
 class FlutterImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Image.network(
-      "https://upload.jianshu.io/users/upload_avatars/3884536/d847a50f1da0.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240",
-          width: 400,
-          height: 400,
-          fit: BoxFit.contain,
-          centerSlice: Rect.fromLTWH(10, 10, 10, 10),
+
+    var img = Image.network(
+      "https://upload-images.jianshu.io/upload_images/3884536-0a4766ccd55f287a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+      matchTextDirection: true,
+    );
+
+    var center = Center(
+        child: ListView(
+      children: <Widget>[
+        Directionality(
+          textDirection: TextDirection.ltr,
+          child: img,
+        ),
+        Directionality(
+          textDirection: TextDirection.rtl,
+          child: img,
+        )
+      ],
     ));
+
+    return Scaffold(
+      body: center,
+    );
   }
 }
 
@@ -26,3 +41,29 @@ class FlutterImage extends StatelessWidget {
 //          fit: BoxFit.contain,
 //          centerSlice: Rect.fromLTWH(10, 10, 10, 10),
 //    )
+
+
+//matchTextDirection/////////////
+
+//var img = Image.network(
+//  "https://upload-images.jianshu.io/upload_images/3884536-0a4766ccd55f287a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240",
+//  matchTextDirection: true,
+//);
+//
+//var center = Center(
+//    child: ListView(
+//      children: <Widget>[
+//        Directionality(
+//          textDirection: TextDirection.ltr,
+//          child: img,
+//        ),
+//        Directionality(
+//          textDirection: TextDirection.rtl,
+//          child: img,
+//        )
+//      ],
+//    ));
+//
+//return Scaffold(
+//body: center,
+//);
