@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
-
+//博客地址：https://www.jianshu.com/p/68879dd00f81
 class FlutterImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
