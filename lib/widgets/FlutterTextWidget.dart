@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class MyTextWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return txt2;
+    return Scaffold(
+      body: SafeArea(child: txt2),
+    );
   }
 
   //TextStyle->decoration: TextDecoration.none 去掉Text默认的下划线

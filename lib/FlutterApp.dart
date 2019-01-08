@@ -13,7 +13,7 @@ class FlutterApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FlutterImage(),
+      home: MyTextWidget(),
     );
   }
 }
