@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 
-class FlutterButton extends StatelessWidget {
+class FlutterRaisedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +14,7 @@ class FlutterButton extends StatelessWidget {
             highlightColor: Colors.deepPurpleAccent,
             splashColor: Colors.deepOrangeAccent,
             colorBrightness: Brightness.dark,
-            elevation: 70.0,
+            elevation: 50.0,
             highlightElevation: 100.0,
             disabledElevation: 20.0,
             onPressed: () {
@@ -22,7 +22,7 @@ class FlutterButton extends StatelessWidget {
             },
             child: Text(
               'RaisedButton',
-              style: TextStyle(color: Colors.white, fontSize: 50),
+              style: TextStyle(color: Colors.white, fontSize: 40),
             ),
           ),
         ),
