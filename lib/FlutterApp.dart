@@ -4,6 +4,7 @@ import 'package:flutter_app/widgets/FlutterContainer.dart';
 import 'package:flutter_app/widgets/FlutterAlign.dart';
 import 'package:flutter_app/widgets/FlutterRow.dart';
 import 'package:flutter_app/widgets/FlutterImage.dart';
+import 'package:flutter_app/widgets/FlutterButton.dart';
 
 class FlutterApp extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class FlutterApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyTextWidget(),
+      home: FlutterButton(),
     );
   }
 }
