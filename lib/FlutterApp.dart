@@ -7,6 +7,7 @@ import 'package:flutter_app/widgets/FlutterImage.dart';
 import 'package:flutter_app/widgets/FlutterRaisedButton.dart';
 import 'package:flutter_app/widgets/FlutterFloatingActionButton.dart';
 import 'package:flutter_app/widgets/FlutterFlatButton.dart';
+import 'package:flutter_app/widgets/FlutterIconButton.dart';
 
 class FlutterApp extends StatelessWidget {
   @override
@@ -19,7 +20,7 @@ class FlutterApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
             child: Container(
-          child: FlutterFlatButton(),
+          child: FlutterIconButton(),
           alignment: Alignment.center,
         )),
       ),
