@@ -6,6 +6,7 @@ import 'package:flutter_app/widgets/FlutterRow.dart';
 import 'package:flutter_app/widgets/FlutterImage.dart';
 import 'package:flutter_app/widgets/FlutterRaisedButton.dart';
 import 'package:flutter_app/widgets/FlutterFloatingActionButton.dart';
+import 'package:flutter_app/widgets/FlutterFlatButton.dart';
 
 class FlutterApp extends StatelessWidget {
   @override
@@ -18,7 +19,7 @@ class FlutterApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
             child: Container(
-          child: FlutterFloatingActionButton(),
+          child: FlutterFlatButton(),
           alignment: Alignment.center,
         )),
       ),
