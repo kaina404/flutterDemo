@@ -27,7 +27,8 @@ List<DropdownMenuItem<String>> _getCityList() {
 
 //下划线开头表示私有
 class _DropdownState extends State<FlutterDropdownButtonStatefulWidget> {
-//  下拉菜单选中的值（注意：在初始化时，要么为null，这时显示默认hint的值；如果自己设定值，则值必须为列表中的一个值，如果不在列表中，会抛出异常）
+//  下拉菜单选中的值（注意：在初始化时，要么为null，这时显示默认hint的值；
+// 如果自己设定值，则值必须为列表中的一个值，如果不在列表中，会抛出异常）
   String selectValue;
 
   @override
@@ -37,7 +38,8 @@ class _DropdownState extends State<FlutterDropdownButtonStatefulWidget> {
       items: _getItems(),
       //默认显示的值
       hint: Text("请选择城市"),
-      //下拉菜单选中的值（注意：在初始化时，要么为null，这时显示默认hint的值；如果自己设定值，则值必须为列表中的一个值，如果不在列表中，会抛出异常）
+      //下拉菜单选中的值（注意：在初始化时，要么为null，这时显示默认hint的值；
+      // 如果自己设定值，则值必须为列表中的一个值，如果不在列表中，会抛出异常）
       value: selectValue,
       onChanged: (itemValue) {//itemValue为选中的值
         print("itemValue=$itemValue");
