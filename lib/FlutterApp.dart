@@ -12,6 +12,7 @@ import 'package:flutter_app/widgets/FlutterDropdownButton.dart';
 import 'package:flutter_app/widgets/FlutterPopupMenuButton.dart';
 import 'package:flutter_app/widgets/FlutterButtonBar.dart';
 import 'package:flutter_app/widgets/FlutterListView.dart';
+import 'package:flutter_app/projectDemo/DouBanDemo.dart';
 
 class FlutterApp extends StatelessWidget {
   @override
@@ -23,7 +24,7 @@ class FlutterApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
             child: Container(
-          child: FlutterListView(),
+          child: DouBanListView(),
           alignment: Alignment.center,
         )),
       ),
