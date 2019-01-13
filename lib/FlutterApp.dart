@@ -20,8 +20,12 @@ class FlutterApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter",
       theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
       home: Scaffold(
+        appBar:  AppBar(
+          title: Text('豆瓣电影 Top150'),
+        ),
         body: SafeArea(
             child: Container(
           child: DouBanListView(),

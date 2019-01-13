@@ -17,7 +17,7 @@ class DouBanState extends State<DouBanListView> {
     var httpClient = new HttpClient();
     //http://api.douban.com/v2/movie/top250?start=25&count=10
     var uri = new Uri.http(
-        'api.douban.com', '/v2/movie/top250', {'start': '0', 'count': '50'});
+        'api.douban.com', '/v2/movie/top250', {'start': '0', 'count': '150'});
     var request = await httpClient.getUrl(uri);
     var response = await request.close();
     var responseBody = await response.transform(Convert.utf8.decoder).join();
