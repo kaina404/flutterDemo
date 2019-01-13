@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/FlutterApp.dart';
 import 'package:flutter_app/widgets/FlutterPopupMenuButton.dart';
 
-void main() => runApp(FlutterPopupMenuButton());
+void main() => runApp(FlutterApp());
 
 
 class MyApp extends StatelessWidget {

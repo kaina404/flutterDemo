@@ -10,7 +10,7 @@ import 'package:flutter_app/widgets/FlutterFlatButton.dart';
 import 'package:flutter_app/widgets/FlutterIconButton.dart';
 import 'package:flutter_app/widgets/FlutterDropdownButton.dart';
 import 'package:flutter_app/widgets/FlutterPopupMenuButton.dart';
-
+import 'package:flutter_app/widgets/FlutterButtonBar.dart';
 
 class FlutterApp extends StatelessWidget {
   @override
@@ -23,7 +23,7 @@ class FlutterApp extends StatelessWidget {
       home: Scaffold(
         body: SafeArea(
             child: Container(
-          child: FlutterPopupMenuButton(),
+          child: FlutterButtonBar(),
           alignment: Alignment.center,
         )),
       ),
