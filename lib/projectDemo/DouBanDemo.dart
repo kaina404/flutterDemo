@@ -52,7 +52,15 @@ class DouBanState extends State<DouBanListView> {
     return ListView.builder(
         itemCount: subjects.length,
         itemBuilder: (BuildContext context, int pos) {
-          return getItemContainerView(subjects[pos]);
+          return Column(
+            children: <Widget>[
+              getItemContainerView(subjects[pos]),
+              Container(
+                height: 10,
+                color: Color.fromARGB(255, 234, 233, 234),
+              )
+            ],
+          );
         });
   }
 
@@ -84,16 +92,24 @@ class DouBanState extends State<DouBanListView> {
 
   getItemContainerView(var subject) {
     var imgUrl = subject['images']['medium'];
-    return Row(
-      children: <Widget>[getImage(imgUrl), getMovieInfoView(subject)],
+    return Container(
+      padding: EdgeInsets.all(5.0),
+      child: Row(
+        children: <Widget>[getImage(imgUrl), getMovieInfoView(subject)],
+      ),
     );
   }
 
+  //圆角图片
   getImage(var imgUrl) {
     return Container(
+      decoration: BoxDecoration(
+          image:
+              DecorationImage(image: NetworkImage(imgUrl), fit: BoxFit.cover),
+          borderRadius: BorderRadius.all(Radius.circular(5.0))),
       margin: EdgeInsets.only(left: 8, top: 3, right: 8, bottom: 3),
-      child: Image.network(imgUrl),
-      height: 100.0,
+      height: 150.0,
+      width: 100.0,
     );
   }
 
@@ -110,7 +126,11 @@ class DouBanState extends State<DouBanListView> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[getTitleView(subject), RatingBar(start), DescWidget(subject)],
+        children: <Widget>[
+          getTitleView(subject),
+          RatingBar(start),
+          DescWidget(subject)
+        ],
       ),
     );
   }
@@ -119,7 +139,6 @@ class DouBanState extends State<DouBanListView> {
 class DescWidget extends StatelessWidget {
   var subject;
 
-
   DescWidget(this.subject);
 
   @override
@@ -127,16 +146,24 @@ class DescWidget extends StatelessWidget {
     var casts = subject['casts'];
     var sb = StringBuffer();
     var genres = subject['genres'];
-    for(var i=0;i< genres.length;i++){
+    for (var i = 0; i < genres.length; i++) {
       sb.write('${genres[i]}  ');
     }
     sb.write("/ ");
-    List<String> list = List.generate(casts.length, (int index)=> casts[index]['name'].toString());
+    List<String> list = List.generate(
+        casts.length, (int index) => casts[index]['name'].toString());
 
-    for(var i = 0;i < list.length;i++){
+    for (var i = 0; i < list.length; i++) {
       sb.write('${list[i]} ');
     }
-    return Text(sb.toString(), softWrap: true, textDirection: TextDirection.ltr,);
+    return Container(
+      width: 200,
+      child: Text(
+        sb.toString(),
+        softWrap: true,
+        textDirection: TextDirection.ltr,
+      ),
+    );
   }
 }
 
