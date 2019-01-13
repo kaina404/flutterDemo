@@ -11,6 +11,7 @@ import 'package:flutter_app/widgets/FlutterIconButton.dart';
 import 'package:flutter_app/widgets/FlutterDropdownButton.dart';
 import 'package:flutter_app/widgets/FlutterPopupMenuButton.dart';
 import 'package:flutter_app/widgets/FlutterButtonBar.dart';
+import 'package:flutter_app/widgets/FlutterListView.dart';
 
 class FlutterApp extends StatelessWidget {
   @override
@@ -18,12 +19,11 @@ class FlutterApp extends StatelessWidget {
     return MaterialApp(
       title: "Flutter",
       theme: ThemeData(
-        primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         body: SafeArea(
             child: Container(
-          child: FlutterButtonBar(),
+          child: FlutterListView(),
           alignment: Alignment.center,
         )),
       ),
