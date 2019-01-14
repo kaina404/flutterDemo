@@ -43,13 +43,16 @@ class DouBanState extends State<DouBanListView> {
 
   getContainer() {
     if (subjects.length == 0) {
+      //loading
       return CupertinoActivityIndicator();
     }
     return ListView.builder(
         itemCount: subjects.length,
         itemBuilder: (BuildContext context, int pos) {
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              numberWidget(pos),
               getItemContainerView(subjects[pos]),
               //下面的灰色分割线
               Container(
@@ -138,6 +141,21 @@ class DouBanState extends State<DouBanListView> {
       ),
     );
   }
+
+  //NO.1 图标
+  numberWidget(var no) {
+    return Container(
+      child: Text(
+        'No.$no',
+        style: TextStyle(color: Color.fromARGB(255, 133, 66, 0)),
+      ),
+      decoration: BoxDecoration(
+          color: Color.fromARGB(255, 255, 201, 129),
+          borderRadius: BorderRadius.all(Radius.circular(5.0))),
+      padding: EdgeInsets.fromLTRB(8, 4, 8, 4),
+      margin: EdgeInsets.only(left: 12, top: 10),
+    );
+  }
 }
 
 //类别、演员介绍
@@ -166,6 +184,8 @@ class DescWidget extends StatelessWidget {
         sb.toString(),
         softWrap: true,
         textDirection: TextDirection.ltr,
+        style:
+            TextStyle(fontSize: 16, color: Color.fromARGB(255, 118, 117, 118)),
       ),
     );
   }
@@ -221,6 +241,7 @@ class RatingBar extends StatelessWidget {
     ));
     return Container(
       alignment: Alignment.topLeft,
+      padding: const EdgeInsets.only(left: 0, top: 8, right: 0, bottom: 5),
       child: Row(
         children: startList,
       ),
