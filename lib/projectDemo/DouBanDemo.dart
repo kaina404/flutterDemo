@@ -52,7 +52,7 @@ class DouBanState extends State<DouBanListView> {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              numberWidget(pos),
+              numberWidget(pos+1),
               getItemContainerView(subjects[pos]),
               //下面的灰色分割线
               Container(
