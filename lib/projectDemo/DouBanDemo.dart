@@ -13,6 +13,8 @@ class DouBanListView extends StatefulWidget {
 class DouBanState extends State<DouBanListView> {
   var subjects = [];
 
+  var itemHeight = 150.0;
+
   getDouBan() async {
     var httpClient = new HttpClient();
     //http://api.douban.com/v2/movie/top250?start=25&count=10
@@ -39,22 +41,17 @@ class DouBanState extends State<DouBanListView> {
     );
   }
 
-  getItemView(var subject) {
-    return Container(
-      height: 200.0,
-      child: Image.network(
-        subject['images']['medium'],
-      ),
-    );
-  }
-
   getContainer() {
+    if (subjects.length == 0) {
+      return CupertinoActivityIndicator();
+    }
     return ListView.builder(
         itemCount: subjects.length,
         itemBuilder: (BuildContext context, int pos) {
           return Column(
             children: <Widget>[
               getItemContainerView(subjects[pos]),
+              //下面的灰色分割线
               Container(
                 height: 10,
                 color: Color.fromARGB(255, 234, 233, 234),
@@ -93,9 +90,16 @@ class DouBanState extends State<DouBanListView> {
   getItemContainerView(var subject) {
     var imgUrl = subject['images']['medium'];
     return Container(
+      width: double.infinity,
       padding: EdgeInsets.all(5.0),
       child: Row(
-        children: <Widget>[getImage(imgUrl), getMovieInfoView(subject)],
+        children: <Widget>[
+          getImage(imgUrl),
+          Expanded(
+            child: getMovieInfoView(subject),
+            flex: 1,
+          )
+        ],
       ),
     );
   }
@@ -108,7 +112,7 @@ class DouBanState extends State<DouBanListView> {
               DecorationImage(image: NetworkImage(imgUrl), fit: BoxFit.cover),
           borderRadius: BorderRadius.all(Radius.circular(5.0))),
       margin: EdgeInsets.only(left: 8, top: 3, right: 8, bottom: 3),
-      height: 150.0,
+      height: itemHeight,
       width: 100.0,
     );
   }
@@ -123,9 +127,9 @@ class DouBanState extends State<DouBanListView> {
   getMovieInfoView(var subject) {
     var start = subject['rating']['average'];
     return Container(
+      height: itemHeight,
+      alignment: Alignment.topLeft,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           getTitleView(subject),
           RatingBar(start),
@@ -136,6 +140,7 @@ class DouBanState extends State<DouBanListView> {
   }
 }
 
+//类别、演员介绍
 class DescWidget extends StatelessWidget {
   var subject;
 
@@ -157,7 +162,6 @@ class DescWidget extends StatelessWidget {
       sb.write('${list[i]} ');
     }
     return Container(
-      width: 200,
       child: Text(
         sb.toString(),
         softWrap: true,
