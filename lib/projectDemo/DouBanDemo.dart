@@ -37,11 +37,11 @@ class DouBanState extends State<DouBanListView> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: getContainer(),
+      child: getListViewContainer(),
     );
   }
 
-  getContainer() {
+  getListViewContainer() {
     if (subjects.length == 0) {
       //loading
       return CupertinoActivityIndicator();
