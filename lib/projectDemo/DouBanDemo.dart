@@ -15,7 +15,7 @@ class DouBanState extends State<DouBanListView> {
 
   var itemHeight = 150.0;
 
-  getDouBan() async {
+  requestMovieTop() async {
     var httpClient = new HttpClient();
     //http://api.douban.com/v2/movie/top250?start=25&count=10
     var uri = new Uri.http(
@@ -31,7 +31,7 @@ class DouBanState extends State<DouBanListView> {
 
   @override
   void initState() {
-    getDouBan();
+    requestMovieTop();
   }
 
   @override
