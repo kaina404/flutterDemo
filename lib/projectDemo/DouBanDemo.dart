@@ -47,13 +47,14 @@ class DouBanState extends State<DouBanListView> {
       return CupertinoActivityIndicator();
     }
     return ListView.builder(
+      //item 的数量
         itemCount: subjects.length,
-        itemBuilder: (BuildContext context, int pos) {
+        itemBuilder: (BuildContext context, int index) {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              numberWidget(pos+1),
-              getItemContainerView(subjects[pos]),
+              numberWidget(index+1),
+              getItemContainerView(subjects[index]),
               //下面的灰色分割线
               Container(
                 height: 10,

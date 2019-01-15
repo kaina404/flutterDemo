@@ -29,7 +29,7 @@ class FlutterApp extends StatelessWidget {
         ),
         body: SafeArea(
             child: Container(
-          child: FlutterListView(),
+          child: DouBanListView(),
           alignment: Alignment.center,
         )),
       ),
