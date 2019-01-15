@@ -47,20 +47,29 @@ class DouBanState extends State<DouBanListView> {
       return CupertinoActivityIndicator();
     }
     return ListView.builder(
-      //item 的数量
+        //item 的数量
         itemCount: subjects.length,
         itemBuilder: (BuildContext context, int index) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              numberWidget(index+1),
-              getItemContainerView(subjects[index]),
-              //下面的灰色分割线
-              Container(
-                height: 10,
-                color: Color.fromARGB(255, 234, 233, 234),
-              )
-            ],
+          return GestureDetector(//Flutter 手势处理
+            child: Container(
+              color: Colors.transparent,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  numberWidget(index + 1),
+                  getItemContainerView(subjects[index]),
+                  //下面的灰色分割线
+                  Container(
+                    height: 10,
+                    color: Color.fromARGB(255, 234, 233, 234),
+                  )
+                ],
+              ),
+            ),
+            onTap: () {
+              //监听点击事件
+              print("click item index=$index");
+            },
           );
         });
   }
