@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 class FlutterGridView extends StatelessWidget {
 
 
-  //GridView写法四
-  @override
-  Widget build(BuildContext context) {
-    List<String> datas = getDataList();
-    return GridView.custom(
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 3, mainAxisSpacing: 10.0, crossAxisSpacing: 20.0, ),
-        childrenDelegate: SliverChildBuilderDelegate((context, position) {
-          return getItemContainer(datas[position]);
-        }, childCount: datas.length));
-  }
+//  //GridView写法四
+//  @override
+//  Widget build(BuildContext context) {
+//    List<String> datas = getDataList();
+//    return GridView.custom(
+//        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+//            crossAxisCount: 3, mainAxisSpacing: 10.0, crossAxisSpacing: 20.0, ),
+//        childrenDelegate: SliverChildBuilderDelegate((context, position) {
+//          return getItemContainer(datas[position]);
+//        }, childCount: datas.length));
+//  }
 
   //GridView写法三
 
@@ -61,23 +61,23 @@ class FlutterGridView extends StatelessWidget {
 
   //GridView写法一
 
-//  @override
-//  Widget build(BuildContext context) {
-//    return GridView.count(
-//      //水平子Widget之间间距
-//      crossAxisSpacing: 10.0,
-//      //垂直子Widget之间间距
-//      mainAxisSpacing: 30.0,
-//      //GridView内边距
-//      padding: EdgeInsets.all(10.0),
-//      //一行的Widget数量
-//      crossAxisCount: 2,
-//      //子Widget宽高比例
-//      childAspectRatio: 2.0,
-//      //子Widget列表
-//      children: getWidgetList(),
-//    );
-//  }
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      //水平子Widget之间间距
+      crossAxisSpacing: 10.0,
+      //垂直子Widget之间间距
+      mainAxisSpacing: 10.0,
+      //GridView内边距
+      padding: EdgeInsets.all(10.0),
+      //一行的Widget数量
+      crossAxisCount: 3,
+      //子Widget宽高比例
+      childAspectRatio: 1.0,
+      //子Widget列表
+      children: getWidgetList(),
+    );
+  }
 
   List<String> getDataList() {
     List<String> list = [];
@@ -92,15 +92,21 @@ class FlutterGridView extends StatelessWidget {
   }
 
   Widget getItemContainer(String item) {
-    return Container(
-      width: 5.0,
-      height: 5.0,
-      alignment: Alignment.center,
-      child: Text(
-        item,
-        style: TextStyle(color: Colors.white, fontSize: 20),
-      ),
-      color: Colors.blue,
+
+    return Card(
+      elevation: 20,
+      child: Container(
+        width: 5.0,
+        height: 5.0,
+        alignment: Alignment.center,
+        child: Text(
+          item,
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
+        color: Colors.blue,
+      )
     );
+
+
   }
 }
