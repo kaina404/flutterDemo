@@ -9,7 +9,12 @@ class FlutterCardWidget extends StatelessWidget {
       elevation: 20.0,
       //设置shape，也就是R角
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(20.0)),),
+        borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(20.0),
+            topRight: Radius.zero,
+            bottomLeft: Radius.zero,
+            bottomRight: Radius.circular(20.0)),
+      ),
       //对Widget截取的行为，比如这里 Clip.antiAlias 指抗锯齿
       clipBehavior: Clip.antiAlias,
       semanticContainer: false,
