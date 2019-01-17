@@ -50,7 +50,8 @@ class DouBanState extends State<DouBanListView> {
         //item 的数量
         itemCount: subjects.length,
         itemBuilder: (BuildContext context, int index) {
-          return GestureDetector(//Flutter 手势处理
+          return GestureDetector(
+            //Flutter 手势处理
             child: Container(
               color: Colors.transparent,
               child: Column(
@@ -190,6 +191,7 @@ class DescWidget extends StatelessWidget {
       sb.write('${list[i]} ');
     }
     return Container(
+      alignment: Alignment.topLeft,
       child: Text(
         sb.toString(),
         softWrap: true,
