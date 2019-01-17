@@ -1,24 +1,40 @@
 import 'package:flutter/material.dart';
 
 class FlutterGridView extends StatelessWidget {
+
+
+  //GridView写法四
   @override
   Widget build(BuildContext context) {
     List<String> datas = getDataList();
-    return GridView.builder(
-      itemCount: datas.length,
-      itemBuilder: (BuildContext context, int index) {
-        return getItemContainer(datas[index]);
-      },
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        //单个子Widget的水平最大宽度
-        maxCrossAxisExtent: 100,
-        //垂直单个子Widget之间间距
-        mainAxisSpacing: 20.0,
-        //水平单个子Widget之间间距
-        crossAxisSpacing: 0.0
-      ),
-    );
+    return GridView.custom(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3, mainAxisSpacing: 10.0, crossAxisSpacing: 20.0, ),
+        childrenDelegate: SliverChildBuilderDelegate((context, position) {
+          return getItemContainer(datas[position]);
+        }, childCount: datas.length));
   }
+
+  //GridView写法三
+
+//  @override
+//  Widget build(BuildContext context) {
+//    List<String> datas = getDataList();
+//    return GridView.builder(
+//      itemCount: datas.length,
+//      itemBuilder: (BuildContext context, int index) {
+//        return getItemContainer(datas[index]);
+//      },
+//      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+//        //单个子Widget的水平最大宽度
+//        maxCrossAxisExtent: 100,
+//        //垂直单个子Widget之间间距
+//        mainAxisSpacing: 20.0,
+//        //水平单个子Widget之间间距
+//        crossAxisSpacing: 0.0
+//      ),
+//    );
+//  }
 
   //GridView写法二
 
