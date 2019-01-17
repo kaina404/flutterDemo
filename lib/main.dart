@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/FlutterApp.dart';
 import 'package:flutter_app/widgets/FlutterPopupMenuButton.dart';
 import 'package:flutter_app/router/FlutterRouter.dart';
+import 'package:flutter_app/router/FlutterHero.dart';
 
-void main() => runApp(MaterialApp(
-      title: 'Router Demo',
-      home: FirstPage(),
-    ));
+void main() => runApp(HeroApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
