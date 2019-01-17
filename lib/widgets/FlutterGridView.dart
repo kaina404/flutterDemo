@@ -49,7 +49,7 @@ class FlutterGridView extends StatelessWidget {
     return GridView.count(
       crossAxisSpacing: 10.0,
       //水平单个子Widget之间间距
-      mainAxisSpacing: 20.0,
+      mainAxisSpacing: 30.0,
       //GridView内边距
       padding: EdgeInsets.all(10.0),
       //垂直单个子Widget之间间距
