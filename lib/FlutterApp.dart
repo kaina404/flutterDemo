@@ -16,6 +16,7 @@ import 'package:flutter_app/widgets/FlutterGridView.dart';
 import 'package:flutter_app/projectDemo/DouBanDemo.dart';
 import 'package:flutter_app/test/ContainerTestWidget.dart';
 import 'package:flutter_app/widgets/FlutterCardWidget.dart';
+import 'package:flutter_app/router/FlutterRouter.dart';
 class FlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -30,7 +31,7 @@ class FlutterApp extends StatelessWidget {
         ),
         body: SafeArea(
             child: Container(
-          child: FlutterCardWidget(),
+          child: FirstPage(),
           alignment: Alignment.center,
         )),
       ),
