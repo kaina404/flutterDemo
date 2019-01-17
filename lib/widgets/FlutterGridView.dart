@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
 
 class FlutterGridView extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    List<String> datas = getDataList();
-    return GridView.builder(
-      itemCount: datas.length,
-      itemBuilder: (BuildContext context, int index) {
-        return getItemContainer(datas[index]);
-      },
-      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-        //单个子Widget的水平最大宽度
-        maxCrossAxisExtent: 200,
-        //水平单个子Widget之间间距
-        mainAxisSpacing: 20.0,
-        //垂直单个子Widget之间间距
-        crossAxisSpacing: 10.0
-      ),
-    );
-  }
+//  @override
+//  Widget build(BuildContext context) {
+//    List<String> datas = getDataList();
+//    return GridView.builder(
+//      itemCount: datas.length,
+//      itemBuilder: (BuildContext context, int index) {
+//        return getItemContainer(datas[index]);
+//      },
+//      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+//        //单个子Widget的水平最大宽度
+//        maxCrossAxisExtent: 200,
+//        //水平单个子Widget之间间距
+//        mainAxisSpacing: 20.0,
+//        //垂直单个子Widget之间间距
+//        crossAxisSpacing: 10.0
+//      ),
+//    );
+//  }
 
   //GridView写法二
 
@@ -44,17 +44,21 @@ class FlutterGridView extends StatelessWidget {
 
   //GridView写法一
 
-//  @override
-//  Widget build(BuildContext context) {
-//    return GridView.count(
-//      crossAxisSpacing: 10.0,
-//      mainAxisSpacing: 10.0,
-//      padding: EdgeInsets.all(10.0),
-//      crossAxisCount: 3,
-//      children: getWidgetList(),
-//    );
-//  }
-//
+  @override
+  Widget build(BuildContext context) {
+    return GridView.count(
+      crossAxisSpacing: 10.0,
+      //水平单个子Widget之间间距
+      mainAxisSpacing: 20.0,
+      //GridView内边距
+      padding: EdgeInsets.all(10.0),
+      //垂直单个子Widget之间间距
+      crossAxisCount: 3,
+      //子Widget列表
+      children: getWidgetList(),
+    );
+  }
+
 
   List<String> getDataList() {
     List<String> list = [];
@@ -68,7 +72,7 @@ class FlutterGridView extends StatelessWidget {
     return getDataList().map((item) => getItemContainer(item)).toList();
   }
 
-  getItemContainer(String item) {
+  Widget getItemContainer(String item) {
     return Container(
       child: Text(item),
       color: Colors.blue,
