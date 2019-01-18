@@ -2,6 +2,7 @@ import 'dart:convert' as Convert;
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_app/router/SendDataNewScreen.dart';
 
 class DouBanListView extends StatefulWidget {
   @override
@@ -70,6 +71,12 @@ class DouBanState extends State<DouBanListView> {
             onTap: () {
               //监听点击事件
               print("click item index=$index");
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => DouBanDetailScreen(
+                            subject: subjects[index],
+                          )));
             },
           );
         });
