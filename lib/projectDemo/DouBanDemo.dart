@@ -71,6 +71,7 @@ class DouBanState extends State<DouBanListView> {
             onTap: () {
               //监听点击事件
               print("click item index=$index");
+              //跳转到详情页面
               Navigator.push(
                   context,
                   MaterialPageRoute(
