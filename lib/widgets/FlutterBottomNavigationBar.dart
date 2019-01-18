@@ -85,7 +85,7 @@ class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
         iconSize: 24,
         //当前选中的索引
         currentIndex: _selectIndex,
-        //选中后，导航栏内容的颜色（仅当type: BottomNavigationBarType.fixed,时生效）
+        //选中后，底部BottomNavigationBar内容的颜色(选中时，默认为主题色)（仅当type: BottomNavigationBarType.fixed,时生效）
         fixedColor: Colors.blueAccent,
         type: BottomNavigationBarType.fixed,
       ),
