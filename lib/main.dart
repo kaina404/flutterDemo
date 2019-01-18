@@ -4,7 +4,8 @@ import 'package:flutter_app/widgets/FlutterPopupMenuButton.dart';
 import 'package:flutter_app/router/FlutterRouterNewScreen.dart';
 import 'package:flutter_app/router/FlutterHero.dart';
 
-void main() => runApp(FlutterApp());
+//void main() => runApp(FlutterApp());
+void main() => runApp(MaterialApp(home: FirstPage(),));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
