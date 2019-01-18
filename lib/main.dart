@@ -3,9 +3,9 @@ import 'package:flutter_app/FlutterApp.dart';
 import 'package:flutter_app/widgets/FlutterPopupMenuButton.dart';
 import 'package:flutter_app/router/FlutterRouterNewScreen.dart';
 import 'package:flutter_app/router/FlutterHero.dart';
+import 'package:flutter_app/widgets/FlutterBottomNavigationBar.dart';
 
-void main() => runApp(FlutterApp());
-//void main() => runApp(MaterialApp(home: FirstPage(),));
+void main() => runApp(MaterialApp(home: FlutterBottomNavigationBar(),));
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
