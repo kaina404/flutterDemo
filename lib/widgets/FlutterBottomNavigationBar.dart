@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/widgets/FlutterTabBar.dart';
 
 class FlutterBottomNavigationBar extends StatefulWidget {
   FlutterBottomNavigationBar({Key key}) : super(key: key);
@@ -10,7 +11,7 @@ class FlutterBottomNavigationBar extends StatefulWidget {
 }
 
 class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
-  final List<Widget> pages = [Page1(), Page2(), Page3(), Page4(), Page5()];
+  final List<Widget> pages = [FlutterTabBarApp(), Page2(), Page3(), Page4(), Page5()];
 
   int _selectIndex = 0;
 
@@ -32,9 +33,6 @@ class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
 //    this.primary = true,
     return Scaffold(
       body: pages[_selectIndex],
-      appBar: AppBar(
-        title: Text('BottomNavigationBar'),
-      ),
 //        List<BottomNavigationBarItem>
 //        @required this.icon,
 //    this.title,
