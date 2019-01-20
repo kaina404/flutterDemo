@@ -10,7 +10,7 @@ class FlutterBottomNavigationBar extends StatefulWidget {
 }
 
 class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
-  final List<Widget> pages = [Page1(), Page2(), Page3()];
+  final List<Widget> pages = [Page1(), Page2(), Page3(), Page4(), Page5()];
 
   int _selectIndex = 0;
 
@@ -40,37 +40,47 @@ class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
 //    this.title,
 //    Widget activeIcon,
 //    this.backgroundColor,
-      backgroundColor: Color.fromARGB(245, 255, 255, 255),
+      backgroundColor: Color.fromARGB(255, 248, 248, 248),
       bottomNavigationBar: BottomNavigationBar(
         items: [
 //        BottomNavigationBarItem({
-        //默认图标样式
+          //默认图标样式
 //        @required this.icon,
 //        this.title,
-        //选中的图标样式
+          //选中的图标样式
 //        Widget activeIcon,
-        //背景色
+          //背景色
 //        this.backgroundColor,
 //        })
           BottomNavigationBarItem(
               icon: Icon(
                 Icons.home,
-                color: Colors.black,
+                color: Color.fromARGB(255, 125, 125, 125),
               ),
               title: Text('首页'),
               activeIcon: Icon(
                 Icons.home,
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.movie,
-                  color: Colors.black),
-              title: Text('影院'),
+              icon: Icon(Icons.movie, color: Color.fromARGB(255, 125, 125, 125),),
+              title: Text('书影音'),
               activeIcon: Icon(
                 Icons.movie,
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person,
-                  color: Colors.black),
+              icon: Icon(Icons.group, color: Color.fromARGB(255, 125, 125, 125),),
+              title: Text('小组'),
+              activeIcon: Icon(
+                Icons.group,
+              )),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.receipt, color: Color.fromARGB(255, 125, 125, 125),),
+              title: Text('市集'),
+              activeIcon: Icon(
+                Icons.receipt,
+              )),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person, color: Color.fromARGB(255, 125, 125, 125),),
               title: Text('我的'),
               activeIcon: Icon(
                 Icons.person,
@@ -86,7 +96,7 @@ class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
         //当前选中的索引
         currentIndex: _selectIndex,
         //选中后，底部BottomNavigationBar内容的颜色(选中时，默认为主题色)（仅当type: BottomNavigationBarType.fixed,时生效）
-        fixedColor: Colors.blueAccent,
+        fixedColor: Color.fromARGB(255, 0, 188, 96),
         type: BottomNavigationBarType.fixed,
       ),
     );
@@ -116,6 +126,24 @@ class Page3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text('Page3'),
+    );
+  }
+}
+
+class Page4 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Page4'),
+    );
+  }
+}
+
+class Page5 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Page5'),
     );
   }
 }
