@@ -3,7 +3,6 @@ import 'package:flutter_app/widgets/FlutterTabBarView.dart';
 
 var titleList = ['电影', '电视', '综艺', '读书', '音乐', '同城'];
 
-var selectType;
 List<Widget> tabList;
 
 
@@ -26,19 +25,11 @@ class _FlutterTabBarAppState extends State<FlutterTabBarApp> with SingleTickerPr
   @override
   void initState() {
     super.initState();
-    selectType = titleList[0];
-    tabBar = getFlutterTabBar();
+    tabBar = FlutterTabBar();
     tabList = getTabList();
     _tabController = TabController(vsync: this, length: tabList.length);
   }
 
-  getFlutterTabBar(){
-    return FlutterTabBar(onTap: (int selectIndex) {
-      setState(() {
-        selectType = titleList[selectIndex];
-      });
-    },);
-  }
 
   List<Widget> getTabList() {
     return titleList
@@ -104,13 +95,12 @@ class _FlutterTabBarAppState extends State<FlutterTabBarApp> with SingleTickerPr
 
 class FlutterTabBar extends StatefulWidget {
 
-  final ValueChanged<int> onTap;
 
-  FlutterTabBar({Key key, @required this.onTap}) : super(key: key);
+  FlutterTabBar({Key key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
-    return _FlutterTabBarState(onTap);
+    return _FlutterTabBarState();
   }
 }
 
@@ -120,9 +110,6 @@ class FlutterTabBar extends StatefulWidget {
 class _FlutterTabBarState extends State<FlutterTabBar> {
   Color selectColor, unselectedColor;
   TextStyle selectStyle, unselectedStyle;
-  final ValueChanged<int> onTap;
-
-  _FlutterTabBarState(this.onTap);
 
   @override
   void initState() {
@@ -171,12 +158,6 @@ class _FlutterTabBarState extends State<FlutterTabBar> {
       unselectedLabelColor: unselectedColor,
       unselectedLabelStyle: unselectedStyle,
       indicatorSize: TabBarIndicatorSize.label,
-      onTap: (T) {
-        print(T);
-        if(onTap != null){
-          return onTap(T);
-        }
-      },
     );
   }
 

@@ -32,6 +32,7 @@ class DouBanState extends State<DouBanListView> {
 
   @override
   void initState() {
+    super.initState();
     requestMovieTop();
   }
 
