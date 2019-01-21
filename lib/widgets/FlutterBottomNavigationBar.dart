@@ -15,9 +15,25 @@ class FlutterBottomNavigationBar extends StatefulWidget {
 }
 
 class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
-  final List<Widget> pages = [HomePage(), MoviePage(), GroupPage(), ShopPage(), PersonPage()];
+  final List<Widget> pages = [
+    HomePage(),
+    MoviePage(),
+    GroupPage(),
+    ShopPage(),
+    PersonPage()
+  ];
 
   int _selectIndex = 0;
+//Stack（层叠布局）+Offstage组合,解决状态被重置的问题
+  Widget getWidget(int index) {
+    return Offstage(
+      offstage: _selectIndex != index,
+      child: TickerMode(
+        enabled: _selectIndex == index,
+        child: pages[index],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +52,15 @@ class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
 //    this.resizeToAvoidBottomPadding = true,
 //    this.primary = true,
     return Scaffold(
-      body: pages[_selectIndex],
+      body: new Stack(
+        children: [
+          getWidget(0),
+          getWidget(1),
+          getWidget(2),
+          getWidget(3),
+          getWidget(4),
+        ],
+      ),
 //        List<BottomNavigationBarItem>
 //        @required this.icon,
 //    this.title,
@@ -64,25 +88,37 @@ class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
                 Icons.home,
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.movie, color: Color.fromARGB(255, 125, 125, 125),),
+              icon: Icon(
+                Icons.movie,
+                color: Color.fromARGB(255, 125, 125, 125),
+              ),
               title: Text('书影音'),
               activeIcon: Icon(
                 Icons.movie,
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.group, color: Color.fromARGB(255, 125, 125, 125),),
+              icon: Icon(
+                Icons.group,
+                color: Color.fromARGB(255, 125, 125, 125),
+              ),
               title: Text('小组'),
               activeIcon: Icon(
                 Icons.group,
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.receipt, color: Color.fromARGB(255, 125, 125, 125),),
+              icon: Icon(
+                Icons.receipt,
+                color: Color.fromARGB(255, 125, 125, 125),
+              ),
               title: Text('市集'),
               activeIcon: Icon(
                 Icons.receipt,
               )),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person, color: Color.fromARGB(255, 125, 125, 125),),
+              icon: Icon(
+                Icons.person,
+                color: Color.fromARGB(255, 125, 125, 125),
+              ),
               title: Text('我的'),
               activeIcon: Icon(
                 Icons.person,
