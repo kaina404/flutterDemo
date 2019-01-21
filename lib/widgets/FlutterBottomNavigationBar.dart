@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/widgets/FlutterTabBar.dart';
+import 'package:flutter_app/projectDemo/pages/GroupPage.dart';
+import 'package:flutter_app/projectDemo/pages/MoviePage.dart';
+import 'package:flutter_app/projectDemo/pages/PersonPage.dart';
+import 'package:flutter_app/projectDemo/pages/ShopPage.dart';
 
 class FlutterBottomNavigationBar extends StatefulWidget {
   FlutterBottomNavigationBar({Key key}) : super(key: key);
@@ -11,7 +15,7 @@ class FlutterBottomNavigationBar extends StatefulWidget {
 }
 
 class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
-  final List<Widget> pages = [FlutterTabBarApp(), Page2(), Page3(), Page4(), Page5()];
+  final List<Widget> pages = [FlutterTabBarApp(), MoviePage(), GroupPage(), ShopPage(), PersonPage()];
 
   int _selectIndex = 0;
 

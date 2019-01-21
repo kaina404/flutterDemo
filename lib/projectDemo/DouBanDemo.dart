@@ -11,7 +11,7 @@ class DouBanListView extends StatefulWidget {
   }
 }
 
-class DouBanState extends State<DouBanListView> {
+class DouBanState extends State<DouBanListView> with AutomaticKeepAliveClientMixin{
   var subjects = [];
 
   var itemHeight = 150.0;
@@ -176,6 +176,23 @@ class DouBanState extends State<DouBanListView> {
       margin: EdgeInsets.only(left: 12, top: 10),
     );
   }
+
+//
+//  Flutter中为了节约内存不会保存widget的状态，widget都是临时变量。当我们使用TabBar，TabBarView是我们就会发现，切换tab后再重新切换回上一页面，这时候tab会重新加载重新创建，体验很不友好。Flutter出于自己的设计考虑并没有延续android的ViewPager这样的缓存页面设计，毕竟控件两端都要开发，目前还在beta版本有很多设计还不够完善，但是设计的拓展性没得说，flutter还是为我们提供了解决办法。我们可以强制widget不显示情况下保留状态，下回再加载时就不用重新创建了。
+//
+//  AutomaticKeepAliveClientMixin
+//  AutomaticKeepAliveClientMixin 是一个抽象状态，使用也很简单，我们只需要用我们自己的状态继承这个抽象状态，并实现 wantKeepAlive 方法即可。
+//
+//  继承这个状态后，widget在不显示之后也不会被销毁仍然保存在内存中，所以慎重使用这个方法。
+//  ---------------------
+//  作者：唯夜
+//  来源：CSDN
+//  原文：https://blog.csdn.net/tgbus18990140382/article/details/81181879
+//  版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
+  @override
+  bool get wantKeepAlive => true;
 }
 
 //类别、演员介绍
