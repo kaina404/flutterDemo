@@ -8,14 +8,18 @@ import 'package:flutter_app/widgets/FlutterTabBar.dart';
 import 'package:flutter_app/widgets/FlutterStack.dart';
 
 void main() => runApp(MyApp());
-
+List<String> urls = [
+  'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp',
+  'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp',
+  'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p511118051.webp',
+];
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: FlutterStack(),
+      home: FlutterStack(urls: urls, w: 140.0,),
     );
   }
 }

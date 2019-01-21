@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
 class FlutterStack extends StatelessWidget {
-  List<String> urls = [
-    'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp',
-    'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp',
-    'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p511118051.webp',
-  ];
+  final w = 140.0;
+  final urls;
+
+  FlutterStack({Key key, @required this.urls, double w}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    double w = 140.0;
     double h = w * 1.5;
     double dif = w * 0.14;
     return Scaffold(
