@@ -5,6 +5,7 @@ import 'package:flutter_app/router/FlutterRouterNewScreen.dart';
 import 'package:flutter_app/router/FlutterHero.dart';
 import 'package:flutter_app/widgets/FlutterBottomNavigationBar.dart';
 import 'package:flutter_app/widgets/FlutterTabBar.dart';
+import 'package:flutter_app/widgets/FlutterStack.dart';
 
 void main() => runApp(MyApp());
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: FlutterBottomNavigationBar(),
+      home: FlutterStack(),
     );
   }
 }
