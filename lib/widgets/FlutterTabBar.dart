@@ -6,11 +6,11 @@ var titleList = ['电影', '电视', '综艺', '读书', '音乐', '同城'];
 List<Widget> tabList;
 
 
-class FlutterTabBarApp extends StatefulWidget {
+class HomePage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() {
-    return _FlutterTabBarAppState();
+    return _HomePageState();
   }
 
 }
@@ -18,7 +18,7 @@ class FlutterTabBarApp extends StatefulWidget {
 TabController _tabController;
 
 
-class _FlutterTabBarAppState extends State<FlutterTabBarApp> with SingleTickerProviderStateMixin{
+class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin{
 
   var tabBar;
 

@@ -15,7 +15,7 @@ class FlutterBottomNavigationBar extends StatefulWidget {
 }
 
 class _FlutterBottomNavigationBar extends State<FlutterBottomNavigationBar> {
-  final List<Widget> pages = [FlutterTabBarApp(), MoviePage(), GroupPage(), ShopPage(), PersonPage()];
+  final List<Widget> pages = [HomePage(), MoviePage(), GroupPage(), ShopPage(), PersonPage()];
 
   int _selectIndex = 0;
 
