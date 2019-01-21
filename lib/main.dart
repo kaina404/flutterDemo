@@ -8,7 +8,7 @@ import 'package:flutter_app/widgets/FlutterTabBar.dart';
 import 'package:flutter_app/widgets/FlutterStack.dart';
 import 'package:flutter_app/router/NamedRouter.dart';
 
-void main() => runApp(NamedRouter.initApp());
+void main() => runApp(MyApp());
 List<String> urls = [
   'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp',
   'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp',

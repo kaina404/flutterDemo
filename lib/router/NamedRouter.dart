@@ -6,6 +6,7 @@ class NamedRouter {
   static Widget initApp() {
     return MaterialApp(
       initialRoute: '/',
+      title: 'Named-Router',
       routes: NamedRouter.initRoutes(),
     );
   }
