@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: FlutterStack(urls: urls, w: 140.0,),
+//      home: FlutterStack(urls: urls, w: 140.0,),
+      home: FlutterBottomNavigationBar(),
     );
   }
 }
