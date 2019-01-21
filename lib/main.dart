@@ -6,13 +6,15 @@ import 'package:flutter_app/router/FlutterHero.dart';
 import 'package:flutter_app/widgets/FlutterBottomNavigationBar.dart';
 import 'package:flutter_app/widgets/FlutterTabBar.dart';
 import 'package:flutter_app/widgets/FlutterStack.dart';
+import 'package:flutter_app/router/NamedRouter.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(NamedRouter.initApp());
 List<String> urls = [
   'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p480747492.webp',
   'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p1910813120.webp',
   'http://img1.doubanio.com/view/photo/s_ratio_poster/public/p511118051.webp',
 ];
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
