@@ -7,6 +7,7 @@ import 'package:flutter_app/widgets/FlutterBottomNavigationBar.dart';
 import 'package:flutter_app/widgets/FlutterTabBar.dart';
 import 'package:flutter_app/widgets/FlutterStack.dart';
 import 'package:flutter_app/router/NamedRouter.dart';
+import 'package:flutter_app/widgets/scrollView/FlutterSliverToBoxAdapter.dart';
 
 void main() => runApp(MyApp());
 List<String> urls = [
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
 //      home: FlutterStack(urls: urls, w: 140.0,),
-      home: FlutterBottomNavigationBar(),
+      home: FlutterSliverToBoxAdapter(),
     );
   }
 }
