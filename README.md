@@ -1,4 +1,4 @@
-# flutter_app
+# flutter_widget_demo
 
 包含了Flutter的大部分Widget的使用demo，
 感谢您的Star!
