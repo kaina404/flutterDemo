@@ -1,6 +1,7 @@
 # flutter_app
 
-A new Flutter application.
+包含了Flutter的大部分Widget的使用demo，
+感谢您的Star!
 
 ## Getting Started
 
